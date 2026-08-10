@@ -1365,25 +1365,99 @@ backToTop.addEventListener("click", function () {
 
 });
 // =====================================================
-// MOBILE FIX - CHECK BOOKED TIMES AFTER DATE ENTRY
+// R3 SALON - MOBILE BOOKING DIAGNOSTIC
+// ADD ONLY - DO NOT REMOVE EXISTING CODE
 // =====================================================
 
-dateInput.addEventListener("input", function () {
+(function () {
 
-    clearTimeout(window.mobileDateCheck);
+    if (!dateInput || !timeStatus) return;
 
-    window.mobileDateCheck = setTimeout(function () {
+    dateInput.addEventListener("change", function () {
 
-        const date = dateInput.value.trim();
+        const testDate = dateInput.value.trim();
 
-        if (isValidDate(date)) {
-
-            console.log("Mobile date detected:", date);
-
-            loadBookedSlots();
-
+        if (!isValidDate(testDate)) {
+            return;
         }
 
-    }, 500);
+        timeStatus.innerHTML =
+            "📱 Testing booking connection...";
 
-});
+        const testCallback =
+            "r3Test_" + Date.now();
+
+        window[testCallback] = function (response) {
+
+            console.log(
+                "R3 MOBILE TEST RESPONSE:",
+                response
+            );
+
+            const testScript =
+                document.getElementById(testCallback);
+
+            if (testScript) {
+                testScript.remove();
+            }
+
+            delete window[testCallback];
+
+            if (response && response.success) {
+
+                timeStatus.innerHTML =
+                    "✅ Phone connected! Booked times received.";
+
+                updateTimeSlots(
+                    response.bookedSlots || []
+                );
+
+            } else {
+
+                timeStatus.innerHTML =
+                    "❌ Google Apps Script responded, but returned an error.";
+
+            }
+
+        };
+
+        const testScript =
+            document.createElement("script");
+
+        testScript.id = testCallback;
+
+        testScript.src =
+            SCRIPT_URL +
+            "?action=getBookedSlots" +
+            "&date=" +
+            encodeURIComponent(testDate) +
+            "&callback=" +
+            encodeURIComponent(testCallback) +
+            "&test=" +
+            Date.now();
+
+        testScript.onerror = function () {
+
+            console.log(
+                "R3 MOBILE TEST: SCRIPT LOAD FAILED"
+            );
+
+            delete window[testCallback];
+
+            testScript.remove();
+
+            timeStatus.innerHTML =
+                "❌ Phone cannot connect to Google Apps Script.";
+
+        };
+
+        document.body.appendChild(testScript);
+
+        console.log(
+            "R3 MOBILE TEST URL:",
+            testScript.src
+        );
+
+    });
+
+})();
