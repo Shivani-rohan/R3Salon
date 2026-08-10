@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>R3 Salon | Men's Salon</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        R3 Salon
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Booking</a>
+        <a href="#reviews">Review</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="hero-content">
+
+           <div class="logo-title">
+    R3 SALON
+    <div class="logo-line">✦ ───────── ✦</div>
+</div>
+            <h2>Where Men Shine</h2>
+
+            <p>
+                Style. Confidence. Grooming.
+                Everything a man needs in one place.
+            </p>
+
+        
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services" class="section">
+
+    <div class="section-title">
+
+        <h2>Our Services</h2>
+
+        <p>
+            Professional grooming services for men
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <h3>Hair Cut</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Hair Colour</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Beard</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Beard Colour</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Hair Spa</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Head Massage</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Ayurvedic Hair Oil</h3>
+        </div>
+
+
+        <div class="service-card">
+            <h3>Hair Styling</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Facial</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Hydra Facial</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>D-Tan</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Clean Up</h3>
+        </div>
+
+        <div class="service-card">
+            <h3>Hair Wash</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="section gallery-section">
+
+    <div class="gallery-grid">
+
+        <!-- Replace these image paths with your actual images -->
+
+        <div class="gallery-item">
+            <img src="gallery1.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery6.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery3.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery4.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery5.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery2.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery7.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery8.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+        <div class="gallery-item">
+            <img src="gallery9.jpg.jpeg" alt="R3 Salon">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section id="booking" class="section booking-section">
+
+    <div class="section-title">
+
+        <h2>Book Your Appointment</h2>
+
+        <p>
+            Choose your services, date and available time
+        </p>
+
+    </div>
+
+
+    <div class="booking-box">
+
+        <form id="bookingForm">
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label>Customer Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label>Mobile Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter mobile number"
+                    maxlength="10"
+                    required
+                >
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="form-group">
+
+                <label>Select Service</label>
+
+                <div class="checkbox-grid">
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Hair Cut">
+                        Hair Cut
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Hair Colour">
+                        Hair Colour
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Beard">
+                        Beard
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Beard Colour">
+                        Beard Colour
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Hair Spa">
+                        Hair Spa
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Head Massage">
+                        Head Massage
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Ayurvedic Hair Oil">
+                        Ayurvedic Hair Oil
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Hair Styling">
+                        Hair Styling
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Facial">
+                        Facial
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Hydra Facial">
+                        Hydra Facial
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="D-Tan">
+                        D-Tan
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Clean Up">
+                        Clean Up
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" name="service" value="Hair Wash">
+                        Hair Wash
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="form-group">
+
+                <label>Appointment Date</label>
+
+                <input
+                    type="text"
+                    id="bookingDate"
+                    placeholder="DD/MM/YYYY"
+                    maxlength="10"
+                    required
+                >
+
+                <small>
+                    Enter date as DD/MM/YYYY
+                </small>
+
+            </div>
+
+
+            <!-- TIME -->
+
+            <div class="form-group">
+
+                <label>Appointment Time</label>
+
+                <select id="bookingTime" required>
+
+                    <option value="">Select Time</option>
+
+                    <option value="09:30 AM">09:30 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="10:30 AM">10:30 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="12:30 PM">12:30 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="01:30 PM">01:30 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="02:30 PM">02:30 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="03:30 PM">03:30 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="04:30 PM">04:30 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                    <option value="05:30 PM">05:30 PM</option>
+                    <option value="06:00 PM">06:00 PM</option>
+                    <option value="06:30 PM">06:30 PM</option>
+                    <option value="07:00 PM">07:00 PM</option>
+                    <option value="07:30 PM">07:30 PM</option>
+                    <option value="08:00 PM">08:00 PM</option>
+                    <option value="08:30 PM">08:30 PM</option>
+                    <option value="09:00 PM">09:00 PM</option>
+                    <option value="09:30 PM">09:30 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+
+                </select>
+
+                <div id="timeStatus"></div>
+
+            </div>
+
+
+            <button type="submit" class="book-btn">
+                Book Appointment
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEW ================= -->
+
+<section id="reviews" class="section reviews-section">
+
+    <div class="section-title">
+
+        <h2>Customer Reviews</h2>
+
+    </div>
+
+
+    <div class="reviews-grid">
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Amazing haircut and excellent service.
+                Highly recommended!"
+            </p>
+
+            <h4>— Customer</h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Nice service, staff is also understanding our requirements, must visit"
+            </p>
+
+            <h4>— Customer</h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Best place for men's grooming.
+                Staff is very friendly."
+            </p>
+
+            <h4>— Customer</h4>
+
+        </div>
+
+    </div>
+
+
+    <a
+        href="https://share.google/YxfqHDTUZyBqYOjKC"
+        target="_blank"
+        class="read-review"
+    >
+        Read More Reviews
+    </a>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="section-title">
+
+        <h2>Contact</h2>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <div class="contact-item">
+
+            <h3>Address</h3>
+
+            <p>
+                Shop No. 12, Padmavati Residency,<br>
+                Shilaj, Ahmedabad - 380059
+            </p>
+
+            <a
+                href="https://share.google/YxfqHDTUZyBqYOjKC"
+                target="_blank"
+            >
+                View on Google Maps
+            </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <h3>Mobile</h3>
+
+            <p>
+                <a href="tel:8980594449">
+                    8980594449
+                </a>
+            </p>
+
+            <p>
+                <a href="tel:7433857169">
+                    7433857169
+                </a>
+            </p>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <h3>Instagram</h3>
+
+            <a
+                href="https://www.instagram.com/r3._.salon?igsh=MWplN3V5Z2VxYWtjag=="
+                target="_blank"
+            >
+                @r3._.salon
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 R3 Salon. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= POPUP ================= -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-box">
+
+        <button class="popup-close" onclick="closePopup()">
+            ×
+        </button>
+
+        <div id="popupIcon" class="popup-icon">
+            ✓
+        </div>
+
+        <h2 id="popupTitle">
+            Booking Successful!
+        </h2>
+
+        <p id="popupMessage">
+            Thank you for choosing R3 Salon.
+            We look forward to seeing you!
+        </p>
+
+        <button
+            class="popup-btn"
+            onclick="closePopup()"
+        >
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- Scissor Hair-Cut Effect -->
+<div id="scissorEffects"></div>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Go to Top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
