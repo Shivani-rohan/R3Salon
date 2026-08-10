@@ -1364,3 +1364,26 @@ backToTop.addEventListener("click", function () {
     });
 
 });
+// =====================================================
+// MOBILE FIX - CHECK BOOKED TIMES AFTER DATE ENTRY
+// =====================================================
+
+dateInput.addEventListener("input", function () {
+
+    clearTimeout(window.mobileDateCheck);
+
+    window.mobileDateCheck = setTimeout(function () {
+
+        const date = dateInput.value.trim();
+
+        if (isValidDate(date)) {
+
+            console.log("Mobile date detected:", date);
+
+            loadBookedSlots();
+
+        }
+
+    }, 500);
+
+});
