@@ -262,7 +262,9 @@ function loadBookedSlots() {
         "&date=" +
         encodeURIComponent(date) +
         "&callback=" +
-        callbackName;
+encodeURIComponent(callbackName) +
+"&t=" +
+Date.now();
 
 
     script.onerror =
@@ -788,14 +790,14 @@ bookingForm.addEventListener(
 
 
         checkScript.src =
-            SCRIPT_URL +
-            "?action=getBookedSlots" +
-            "&date=" +
-            encodeURIComponent(date) +
-            "&callback=" +
-            encodeURIComponent(
-                checkCallbackName
-            );
+    SCRIPT_URL +
+    "?action=getBookedSlots" +
+    "&date=" +
+    encodeURIComponent(date) +
+    "&callback=" +
+    encodeURIComponent(checkCallbackName) +
+    "&t=" +
+    Date.now();
 
 
         /* =========================
@@ -1009,23 +1011,22 @@ if (
 
 
     script.src =
-        SCRIPT_URL +
-        "?action=book" +
-        "&callback=" +
-        encodeURIComponent(
-            callbackName
-        ) +
-        "&name=" +
-        encodeURIComponent(name) +
-        "&phone=" +
-        encodeURIComponent(phone) +
-        "&service=" +
-        encodeURIComponent(services) +
-        "&date=" +
-        encodeURIComponent(date) +
-        "&time=" +
-        encodeURIComponent(time);
-
+    SCRIPT_URL +
+    "?action=book" +
+    "&callback=" +
+    encodeURIComponent(callbackName) +
+    "&name=" +
+    encodeURIComponent(name) +
+    "&phone=" +
+    encodeURIComponent(phone) +
+    "&service=" +
+    encodeURIComponent(services) +
+    "&date=" +
+    encodeURIComponent(date) +
+    "&time=" +
+    encodeURIComponent(time) +
+    "&t=" +
+    Date.now();
 
     /* =========================
        CONNECTION ERROR
@@ -1364,100 +1365,3 @@ backToTop.addEventListener("click", function () {
     });
 
 });
-// =====================================================
-// R3 SALON - MOBILE BOOKING DIAGNOSTIC
-// ADD ONLY - DO NOT REMOVE EXISTING CODE
-// =====================================================
-
-(function () {
-
-    if (!dateInput || !timeStatus) return;
-
-    dateInput.addEventListener("change", function () {
-
-        const testDate = dateInput.value.trim();
-
-        if (!isValidDate(testDate)) {
-            return;
-        }
-
-        timeStatus.innerHTML =
-            "📱 Testing booking connection...";
-
-        const testCallback =
-            "r3Test_" + Date.now();
-
-        window[testCallback] = function (response) {
-
-            console.log(
-                "R3 MOBILE TEST RESPONSE:",
-                response
-            );
-
-            const testScript =
-                document.getElementById(testCallback);
-
-            if (testScript) {
-                testScript.remove();
-            }
-
-            delete window[testCallback];
-
-            if (response && response.success) {
-
-                timeStatus.innerHTML =
-                    "✅ Phone connected! Booked times received.";
-
-                updateTimeSlots(
-                    response.bookedSlots || []
-                );
-
-            } else {
-
-                timeStatus.innerHTML =
-                    "❌ Google Apps Script responded, but returned an error.";
-
-            }
-
-        };
-
-        const testScript =
-            document.createElement("script");
-
-        testScript.id = testCallback;
-
-        testScript.src =
-            SCRIPT_URL +
-            "?action=getBookedSlots" +
-            "&date=" +
-            encodeURIComponent(testDate) +
-            "&callback=" +
-            encodeURIComponent(testCallback) +
-            "&test=" +
-            Date.now();
-
-        testScript.onerror = function () {
-
-            console.log(
-                "R3 MOBILE TEST: SCRIPT LOAD FAILED"
-            );
-
-            delete window[testCallback];
-
-            testScript.remove();
-
-            timeStatus.innerHTML =
-                "❌ Phone cannot connect to Google Apps Script.";
-
-        };
-
-        document.body.appendChild(testScript);
-
-        console.log(
-            "R3 MOBILE TEST URL:",
-            testScript.src
-        );
-
-    });
-
-})();
