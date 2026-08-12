@@ -257,14 +257,12 @@ function loadBookedSlots() {
 
 
     script.src =
-        SCRIPT_URL +
-        "?action=getBookedSlots" +
-        "&date=" +
-        encodeURIComponent(date) +
-        "&callback=" +
-encodeURIComponent(callbackName) +
-"&t=" +
-Date.now();
+    SCRIPT_URL +
+    "?action=getBookedSlots" +
+    "&date=" +
+    encodeURIComponent(date) +
+    "&callback=" +
+    callbackName;
 
 
     script.onerror =
@@ -795,9 +793,7 @@ bookingForm.addEventListener(
     "&date=" +
     encodeURIComponent(date) +
     "&callback=" +
-    encodeURIComponent(checkCallbackName) +
-    "&t=" +
-    Date.now();
+    encodeURIComponent(checkCallbackName);
 
 
         /* =========================
@@ -1024,9 +1020,7 @@ if (
     "&date=" +
     encodeURIComponent(date) +
     "&time=" +
-    encodeURIComponent(time) +
-    "&t=" +
-    Date.now();
+    encodeURIComponent(time);
 
     /* =========================
        CONNECTION ERROR
